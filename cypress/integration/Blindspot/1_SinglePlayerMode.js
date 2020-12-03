@@ -560,11 +560,11 @@ it('Verify the feedback message is displayed in feedback screen', () => {
         .and('contain.text', 'Response from the UFC')
 })
 
-it('Verify start vote correctly displayed', () => {
-    cy.get('#stat-number')
-        .should('be.visible')
-        .and('contain.text', '3')
-})
+// it('Verify start vote correctly displayed', () => {
+//     cy.get('#stat-number')
+//         .should('be.visible')
+//         .and('contain.text', '3')
+// })
 
 it('Verify earned vote displayed in feedback screen', () =>{
     cy.get('#votes-earned', {timeout:100000})
@@ -1057,7 +1057,7 @@ it('Verify submit group answer fuctionality', () => {
 
 it('Verify the 1st tutorial in feedback screen is not displayed', () => {
     cy.waitForResource('feedback.jpg', {timeout: 100000})
-    cy.wait(10000)
+    cy.wait(3000)
     cy.get('#tutor-earned > .tutor-inner', {timeout: 100000})
         .should('not.be.visible');
 })
@@ -1244,7 +1244,7 @@ it('Verify submit group answer fuctionality', () => {
 
 it('Verify Day 3 - Yun Suk Beriefing message is displayed', () => {
     cy.waitForResource('Experts-compressed-70.jpg', {timeout: 100000})
-    cy.get('.brief-inner', {timeout: 100000})
+    cy.get('.brief-inner', {timeout: 50000})
         .should('be.visible')
         .and('contain.text', 'Improvement initiative – Yun Suk')
 })
@@ -1327,7 +1327,7 @@ it('Verify submit group answer fuctionality', () => {
 
 it('Verify the 1st tutorial in feedback screen is not displayed', () => {
     cy.waitForResource('feedback.jpg', {timeout: 100000})
-    cy.wait(10000)
+    cy.wait(3000)
     cy.get('#tutor-earned > .tutor-inner', {timeout: 100000})
         .should('not.be.visible');
 })
@@ -1481,7 +1481,7 @@ it('Verify submit group answer fuctionality', () => {
 
 it('Verify the 1st tutorial in feedback screen is not displayed', () => {
     cy.waitForResource('feedback.jpg', {timeout: 100000})
-    cy.wait(10000)
+    cy.wait(3000)
     cy.get('#tutor-earned > .tutor-inner', {timeout: 100000})
         .should('not.be.visible');
 })
@@ -1715,7 +1715,7 @@ it('Verify submit group answer fuctionality', () => {
 
 it('Verify the 1st tutorial in feedback screen is not displayed', () => {
     cy.waitForResource('feedback.jpg', {timeout: 100000})
-    cy.wait(10000)
+    cy.wait(3000)
     cy.get('#tutor-earned > .tutor-inner', {timeout: 100000})
         .should('not.be.visible');
 })
@@ -1905,7 +1905,7 @@ it('Verify submit group answer fuctionality', () => {
 
 it('Verify the 1st tutorial in feedback screen is not displayed', () => {
     cy.waitForResource('feedback.jpg', {timeout: 100000})
-    cy.wait(10000)
+    cy.wait(3000)
     cy.get('#tutor-earned > .tutor-inner', {timeout: 100000})
         .should('not.be.visible');
 })
