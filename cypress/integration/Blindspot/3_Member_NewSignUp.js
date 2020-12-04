@@ -134,6 +134,12 @@ it('Verify ready button is displayed in waiting room', () => {
     .and('contain.text', "Klaar")
 })
 
+it('Verify the member language same as leader after change to Dutch ', () => {
+  cy.get('#ready-btn', {timeout: 10000})
+    .should('be.visible')
+    .and('contain.text', "Klaar")
+})
+
 it('Verify close info button is displayed and clickable', () => {
   cy.get('.close-info', {timeout: 10000})
     .should('be.visible')
@@ -219,85 +225,5 @@ cy.get('.membermessage-content', {timeout: 50000})
   .and('contain.text', playerName)
 });
 
-
-// it('Verify user can change the language to Dutch', () => {
-// cy.get('#language').select('nl')
-// })
-
-
-// it('Verify player name is displayed in room info after change language', () => {
-// cy.contains('Hi ' + playerName)
-// })
-
-// it('Verify ready button is displayed after leader change language', () => {
-// cy.get('#ready-btn', {timeout: 10000})
-//   .should('be.visible')
-//   .and('contain.text', "Klaar")
-// })
-
-// it('Verify close info button is displayed and clickable after change language', () => {
-// cy.get('.close-info', {timeout: 10000})
-//   .should('be.visible')
-//   .click({force: true})
-// // cy.get('.gameroombg').click()
-// })
-
-// it('Verify Team ID copied message is displayed if user click copy button after leader change language', () => {
-// // cy.get('.teamidspan').click('topRight')
-// cy.get('.copy-id-button')
-// .click({force: true})
-// // cy.contains('Copy ID').click(left)
-// cy.get('#general-snackbar-wrapper', {timeout: 50000})
-// .should('be.visible')
-// .and('contain.text', 'Team ID copied!')
-// })
-
-// it('Verify user can close Team ID copied mesage after change language', () =>{
-// cy.get('.close-snackbar', {timeout: 50000})
-// .click()
-// });
-
-// it('Verify the Team ID displayed after change language', () => {
-// cy.readFile('path/to/teamID.txt').then(tim => {
-// console.log(tim);
-// cy.get('#theTeamID')
-// .should('be.visible')
-// .and('contain.text', tim)
-// })
-// });
-
-
-// it('Verify the Team ID can be copied after change language', () => {
-// cy.get('.copy-id-button').click().then(() => {
-// cy.task('getClipboard').then(($clip) => {
-//      const timID = $clip;
-//      cy.log('this is what was in clipboard', timID);
-//      cy.readFile('path/to/teamID.txt').then(tim => {
-//       console.log(tim);
-//     expect(tim).to.eq(timID)
-//       });
-//  });
-// });
-// });
-
-// it('Verify player name is displayed in waiting room after change language', () =>{
-// cy.get('.member-name', {timeout: 50000})
-//   .should('be.visible')
-//   .and('contain.text', playerName)
-// })
-
-// it('Verify the avatar is displayed in waiting room after change language', () => {
-// cy.get('.avatar > img', {timeout: 50000})
-//   .should('be.visible')
-// // cy.get('div').find('avatar')
-// //   .should('have.attr', 'src').should('include','img_1317')
-// })
-
-// it('Verify user can change the language to English', () => {
-// cy.get('#language').select('en')
-// cy.get('#language', {timeout: 50000})
-//   .should('be.visible')
-//   .and('contain.text', 'English')
-// })
 
 });

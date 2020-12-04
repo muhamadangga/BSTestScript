@@ -290,7 +290,7 @@ it('Verify zoom button functionality', () =>{
         .should('be.visible')
 })
 
-it('Verify cloose button in image displayed functionality', () => {
+it('Verify cloose button in image functionality', () => {
     cy.get('.close-idb', {timeout: 50000}).click()
     cy.get('.embedMedia')
         .should('not.exist')
@@ -368,6 +368,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 })
 
 it('Verify submit group answer fuctionality', () => {
+    cy.wait(2000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .click()
@@ -478,7 +479,7 @@ it('Verify zoom button functionality', () =>{
         .should('be.visible')
 })
 
-it('Verify cloose button in image displayed functionality', () => {
+it('Verify cloose button in image functionality', () => {
     cy.get('.close-idb', {timeout: 50000}).click()
     cy.get('.embedMedia')
         .should('not.exist')
@@ -538,6 +539,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 
 
 it('Verify submit group answer fuctionality', () => {
+    cy.wait(2000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .click()
@@ -747,6 +749,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 })
 
 it('Verify submit group answer fuctionality', () => {
+    cy.wait(2000)
     cy.get('.input-group-answer', {timeout:100000})
         .should('be.visible')
         .click()
@@ -900,6 +903,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 })
 
 it('Verify submit group answer fuctionality', () => {
+    cy.wait(2000)
     cy.get('.input-group-answer', {timeout:100000})
         .should('be.visible')
         .click()
@@ -1050,6 +1054,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 })
 
 it('Verify submit group answer fuctionality', () => {
+    cy.wait(2000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .click()
@@ -1177,7 +1182,7 @@ it('Verify zoom button functionality', () =>{
         .should('be.visible')
 })
 
-it('Verify cloose button in image displayed functionality', () => {
+it('Verify cloose button in image functionality', () => {
     cy.get('.close-idb', {timeout: 50000}).click()
     cy.get('.embedMedia')
         .should('not.exist')
@@ -1236,6 +1241,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 })
 
 it('Verify submit group answer fuctionality', () => {
+    cy.wait(3000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .click()
@@ -1319,6 +1325,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 })
 
 it('Verify submit group answer fuctionality', () => {
+    cy.wait(2000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .click()
@@ -1472,6 +1479,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 })
 
 it('Verify submit group answer fuctionality', () => {
+    cy.wait(2000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .and('contain.text', 'Submit')
@@ -1708,6 +1716,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 
 
 it('Verify submit group answer fuctionality', () => {
+    cy.wait(2000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .click()
@@ -1898,6 +1907,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 
 
 it('Verify submit group answer fuctionality', () => {
+    cy.wait(2000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .click()

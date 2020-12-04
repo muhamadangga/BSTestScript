@@ -115,7 +115,7 @@ it('Verify user can close User ID not found message', () => {
 })
 
 it('Verify login is failed if Token does not match', () => {
-    cy.visit(config.homepage + '/login?token=00a95e65b9e3688ed1aa1ea7db0246f6-155')
+    cy.visit(config.homepage + '/login?token=00a95e65b9e3688ed1aa1ea7db0246f6-438')
       .get('.error', {timeout: 50000})
       .should('be.visible')
       .and('contain.text', 'Token does not match')   
