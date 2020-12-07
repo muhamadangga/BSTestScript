@@ -575,7 +575,7 @@ it('Verify earned vote displayed in feedback screen', () =>{
 })
 
 it('Verify next button functionality in feedback screen challenge 1', () => {
-    cy.waitForResource('feedback.jpg', {timeout: 100000})
+    //cy.waitForResource('feedback.jpg', {timeout: 100000})
     cy.wait(3000)
     cy.get('.next-btn', {timeout: 100000})
         .should('be.visible')
@@ -609,7 +609,7 @@ it('Verify Day 2 Introduction is displayed', () => {
         .and('contain.text', 'When you arrive at the island you are confronted')
 })
 
-it('Verify next button functionality in Day 1 Introduction', () =>{
+it('Verify next button functionality in Day 2 Introduction', () =>{
     cy.get('.next-btn', {timeout: 100000})
         .should('be.visible')
         .and('contain.text', 'Next')
