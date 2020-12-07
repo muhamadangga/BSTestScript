@@ -1382,625 +1382,625 @@ it('Verify Day 4 Beriefing message is displayed', () => {
         .and('contain.text', "The chairman's bag")
 })
 
-it('Verify Day 4 Briefing message can be scroll', () => {
-    cy.get('.brief-inner').scrollTo('bottom')
-})
-
-it('Verify Day 4 Start Challenge button is displayed', () => {
-    cy.get('#start-challenge-in-briefing', {timeout: 50000})
-        .should('be.visible')
-        .and('contain.text', 'Start Challenge')
-})
-
-it('Verify Day 4 Start Challenge button functionality', () => {
-    cy.get('#start-challenge-in-briefing').click()
-    cy.get('.brief-inner')
-        .should('not.be.visible')
-})
-
-
-it('Verify Bag 1 button funtionality', () => {
-    cy.get('[data-id="1"]')
-        .click()
-    cy.get('.active', {timeout:100000})
-        .should('be.visible')
-})
-
-it('Verify close Bag 1 button functionality', () => {
-    cy.get('.close-hp', {timeout: 50000}) 
-        .should('be.visible')
-        .click({force:true})
-})
-
-it('Verify choose Bag 1 button functionality', () => {
-    cy.get('[data-id="1"]').click()
-    cy.get('.active > .hp-header', {timeout: 100000})
-        .should('be.visible')
-        .click()
-    cy.get('.active', {timeout:100000})   
-        .should('not.be.visible')
-    cy.get('.hotspot-item.selected')
-        .should('be.visible')
-});
-
-
-it('Verify Bag 2 button funtionality', () => {
-    cy.get('[data-id="2"]')
-        .click()
-    cy.get('.active', {timeout:100000})
-        .should('be.visible')
-})
-
-it('Verify close Bag 2 button functionality', () => {
-    cy.get('.close-hp', {timeout: 50000}) 
-        .should('be.visible')
-        .click({force:true})
-})
-
-it('Verify choose Bag 2 button functionality', () => {
-    cy.get('[data-id="2"]').click()
-    cy.get('.active > .hp-header', {timeout: 100000})
-        .should('be.visible')
-        .click()
-    cy.get('.active', {timeout:100000})   
-        .should('not.be.visible')
-    cy.get('.hotspot-item.selected')
-        .should('be.visible')
-});
-
-
-it('Verify submit answer button functionality', () => {
-    cy.get('.next-btn', {timeout:10000})
-        .should('be.visible')
-        .click()
-});
-
-
-it('Verify the 1st tutorial in group answer is not displayed', () => {
-    cy.get('#tutor-main > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-
-it('Verify the 2nd tutorial in group answer is not displayed', () => {
-    cy.get('#tutor-popup > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-it('Verify the 3rd tutorial in group answer is not displayed', () => {
-    cy.get('#tutor-submit > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-it('Verify selected individual answer displayed in group answer ', () => {
-    cy.get('*[class^="answerbox-item answer-item selected"]', {timeout: 100000})  
-        .find('div')  
-        .should('have.class', 'answer-count').find('span')
-        .should('have.class', 'number').and('contain.text', '1')
-    
-})
-
-it('Verify submit group answer fuctionality', () => {
-    cy.wait(3000)
-    cy.get('.input-group-answer', {timeout:10000})
-        .should('be.visible')
-        .and('contain.text', 'Submit')
-        .click()
-})
-
-
-it('Verify the 1st tutorial in feedback screen is not displayed', () => {
-    cy.waitForResource('feedback.jpg', {timeout: 100000})
-    cy.wait(3000)
-    cy.get('#tutor-earned > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-
-it('Verify the 2nd tutorial in feedback screen is not displayed', () => {
-    cy.get('#tutor-progression > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-it('Verify the feedback message is displayed in feedback screen', () => {
-    cy.get('.scl-row > :nth-child(1)', {timeout: 50000})
-        .should('be.visible')
-        .and('contain.text', 'Response from the UFC')
-})
-
-// it('Verify start vote correctly displayed', () => {
-//     cy.get('#stat-number')
-//         .should('be.visible')
-//         .and('contain.text', '+3')
+// it('Verify Day 4 Briefing message can be scroll', () => {
+//     cy.get('.brief-inner').scrollTo('bottom')
 // })
 
-it('Verify earned vote displayed in feedback screen', () =>{
-    cy.get('#votes-earned', {timeout:10000})
-        .should('be.visible')
-        .and('contain.text', '+5')
-})
-
-it('Verify next button functionality in feedback screen', () => {
-    cy.waitForResource('feedback.jpg', {timeout: 100000})
-    cy.wait(3000)
-    cy.get('.next-btn', {timeout: 50000})
-        // .should('be.visible')
-        // .and('contain.text', 'Next')
-        .click()
-});
-
-
-it('Verify Day 5 - Introduction is displayed', () => {
-    cy.get('.gsc-inner', {timeout: 100000})
-        .should('be.visible')
-        .and('contain.text', 'Project Future must be able to scale up')
-
-});
-
-it('Verify next button functionality in Day 5 - Introduction', () => {
-    cy.get('.next-btn', {timeout:100000})
-        .should('be.visible')
-        .and('contain.text', 'Next')
-        .click()
-});
-
-
-it('Verify Day 5 Beriefing message is displayed', () => {
-    cy.get('.brief-inner', {timeout: 100000})
-        .should('be.visible')
-        .and('contain.text', 'Day Five')
-})
-
-it('Verify Day 5 Briefing message can be scroll', () => {
-    cy.get('.brief-inner').scrollTo('bottom')
-})
-
-it('Verify Day 5 Start Challenge button is displayed', () => {
-    cy.get('#start-challenge-in-briefing', {timeout: 50000})
-        .should('be.visible')
-        .and('contain.text', 'Start Challenge')
-})
-
-it('Verify Day 5 Start Challenge button functionality', () => {
-    cy.get('#start-challenge-in-briefing').click()
-    cy.get('.brief-inner')
-        .should('not.be.visible')
-})
-
-
-it('Verify Email button funtionality', () => {
-    cy.get('[data-id="1"]')
-        .click()
-    cy.get('.active', {timeout:100000})
-        .should('be.visible')
-})
-
-it('Verify close Email button functionality', () => {
-    cy.get('.close-hp', {timeout: 50000}) 
-        .should('be.visible')
-        .click({force:true})
-})
-
-
-
-it('Verify Research button funtionality', () => {
-    cy.get('[data-id="2"]')
-        .click()
-    cy.get('.active', {timeout:100000})
-        .should('be.visible')
-})
-
-it('Verify close Research button functionality', () => {
-    cy.get('.close-hp', {timeout: 50000}) 
-        .should('be.visible')
-        .click({force:true})
-})
-
-
-it('Verify Survey button funtionality', () => {
-    cy.get('[data-id="3"]')
-        .click()
-    cy.get('.active', {timeout:100000})
-        .should('be.visible')
-})
-
-it('Verify close Survey button functionality', () => {
-    cy.get('.close-hp', {timeout: 50000}) 
-        .should('be.visible')
-        .click({force:true})
-})
-
-
-it('Verify Social Media button funtionality', () => {
-    cy.get('[data-id="4"]')
-        .click()
-    cy.get('.active', {timeout:100000})
-        .should('be.visible')
-})
-
-it('Verify close Social Media button functionality', () => {
-    cy.get('.close-hp', {timeout: 50000}) 
-        .should('be.visible')
-        .click({force:true})
-})
-
-
-it('Verify Newspaper button funtionality', () => {
-    cy.get('[data-id="5"]')
-        .click()
-    cy.get('.active', {timeout:100000})
-        .should('be.visible')
-})
-
-it('Verify close Newspaper button functionality', () => {
-    cy.get('.close-hp', {timeout: 50000}) 
-        .should('be.visible')
-        .click({force:true})
-})
-
-
-it('Verify submit answer button functionality if submit without answer', () => {
-    cy.get('.basic-challenge > .btn', {timeout:10000})
-        .should('be.visible')
-        .and('contain.text', 'Submit')
-        .click()
-    cy.get('#general-snackbar-content', {timeout: 100000})
-        .should('be.visible')
-        .and('contain.text','You have to select an answer')
-});
-
-it('Verify close button functionality in You have to select an answer popup', () => {
-    cy.get('.close-snackbar').click()
-    cy.get('#general-snackbar-wrapper')
-        .should('not.be.visible')
-})
-
-it('Verify Day 5 question is displayed', () => {
-    cy.get('.challenge-question > p', {timeout: 100000})
-        .should('be.visible')
-        .and('contain.text', 'What is the most urgent topic?')
-})
-
-it('Verify Day 5 asnwer is displayed', () => {
-    cy.get('[data-index="0"] > label > span', {timeout: 100000})
-        .should('be.visible')
-        .and('contain.text', 'The inability to maintain a sustainable energy production.')
-    cy.get('[data-index="1"] > label > span', {timeout: 100000})
-        .should('be.visible')
-        .and('contain.text', 'The lack of a strong healthcare system to support its growing number of inhabitants.')
-    cy.get('[data-index="2"] > label > span', {timeout: 100000})
-        .should('be.visible')
-        .and('contain.text', 'The incapacity to maintain sustainable food production.')
-    cy.get('[data-index="3"] > label > span', {timeout: 100000})
-        .should('be.visible')
-        .and('contain.text', 'The incapacity to solve the unequal wealth distribution.')
-
-})
-
-
-it('Verify select answer functioanlity', () => {
-    cy.get('[data-index="2"] > label > span').click()
-    cy.get('.selected > label > span').should('be.visible')
-})
-
-
-it('Verify submit answer button functionality', () => {
-    cy.get('.basic-challenge > .btn', {timeout:10000})
-        .should('be.visible')
-        .and('contain.text', 'Submit')
-        .click()
-});
-
-
-it('Verify the 1st tutorial in group answer is not displayed', () => {
-    cy.get('#tutor-main > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-
-it('Verify the 2nd tutorial in group answer is not displayed', () => {
-    cy.get('#tutor-popup > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-it('Verify the 3rd tutorial in group answer is not displayed', () => {
-    cy.get('#tutor-submit > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-it('Verify selected individual answer displayed in group answer ', () => {
-    cy.get('*[class^="answerbox-item answer-item selected"]', {timeout: 100000})  
-        .find('div')  
-        .should('have.class', 'answer-count').find('span')
-        .should('have.class', 'number').and('contain.text', '1')
-    
-})
-
-
-it('Verify submit group answer fuctionality', () => {
-    cy.wait(3000)
-    cy.get('.input-group-answer', {timeout:10000})
-        .should('be.visible')
-        .click()
-})
-
-it('Verify the 1st tutorial in feedback screen is not displayed', () => {
-    cy.waitForResource('feedback.jpg', {timeout: 100000})
-    cy.wait(3000)
-    cy.get('#tutor-earned > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-
-it('Verify the 2nd tutorial in feedback screen is not displayed', () => {
-    cy.get('#tutor-progression > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-it('Verify the feedback message is displayed in feedback screen', () => {
-    cy.get('.scl-row > :nth-child(1)', {timeout: 50000})
-        .should('be.visible')
-        .and('contain.text', 'Response from the UFC')
-})
-
-// it('Verify start vote correctly displayed', () => {
-//     cy.get('#stat-number')
+// it('Verify Day 4 Start Challenge button is displayed', () => {
+//     cy.get('#start-challenge-in-briefing', {timeout: 50000})
 //         .should('be.visible')
-//         .and('contain.text', '+3')
+//         .and('contain.text', 'Start Challenge')
 // })
 
-it('Verify earned vote displayed in feedback screen', () =>{
-    cy.get('#votes-earned', {timeout:10000})
-        .should('be.visible')
-        .and('contain.text', '+10')
-})
-
-
-it('Verify next button functionality in feedback screen', () => {
-    cy.waitForResource('feedback.jpg', {timeout: 100000})
-    cy.wait(3000)
-    cy.get('.next-btn', {timeout: 50000})
-        // .should('be.visible')
-        // .and('contain.text', 'Next')
-        .click()
-});
-
-
-it('Verify Day 6 - Introduction is displayed', () => {
-    cy.get('.gsc-inner', {timeout: 100000})
-        .should('be.visible')
-        .and('contain.text', 'The week is nearing its end.')
-
-});
-
-it('Verify next button functionality in Day 6 - Introduction', () => {
-    cy.get('.next-btn', {timeout:100000})
-        .should('be.visible')
-        .and('contain.text', 'Next')
-        .click()
-});
-
-it('Verify Day 6 Beriefing message is displayed', () => {
-    cy.get('.brief-inner', {timeout: 100000})
-        .should('be.visible')
-        .and('contain.text', 'Rush hour')
-})
-
-
-it('Verify Day 6 Start Challenge button is displayed', () => {
-    cy.get('#start-challenge-in-briefing', {timeout: 50000})
-        .should('be.visible')
-        .and('contain.text', 'Start Challenge')
-})
-
-it('Verify Day 6 Start Challenge button functionality', () => {
-    cy.get('#start-challenge-in-briefing').click()
-    cy.get('.brief-inner')
-        .should('not.be.visible')
-})
-
-
-it('Verify Metro button funtionality', () => {
-    cy.get('[data-id="1"]')
-        .click()
-    cy.get('.active', {timeout:100000})
-        .should('be.visible')
-})
-
-it('Verify close Metro button functionality', () => {
-    cy.get('.close-hp', {timeout: 50000}) 
-        .should('be.visible')
-        .click({force:true})
-})
-
-it('Verify choose Metro button functionality', () => {
-    cy.get('[data-id="1"]').click()
-    cy.get('.active > .hp-header', {timeout: 100000})
-        .should('be.visible')
-        .click()
-    cy.get('.active', {timeout:100000})   
-        .should('not.be.visible')
-    cy.get('.hotspot-item.selected')
-        .should('be.visible')
-});
-
-
-it('Verify Taxi button funtionality', () => {
-    cy.get('[data-id="2"]')
-        .click()
-    cy.get('.active', {timeout:100000})
-        .should('be.visible')
-})
-
-it('Verify close Taxi button functionality', () => {
-    cy.get('.close-hp', {timeout: 50000}) 
-        .should('be.visible')
-        .click({force:true})
-})
-
-it('Verify choose Taxi button functionality', () => {
-    cy.get('[data-id="2"]').click()
-    cy.get('.active > .hp-header', {timeout: 100000})
-        .should('be.visible')
-        .click()
-    cy.get('.active', {timeout:100000})   
-        .should('not.be.visible')
-    cy.get('.hotspot-item.selected')
-        .should('be.visible')
-});
-
-
-it('Verify Bus button funtionality', () => {
-    cy.get('[data-id="3"]')
-        .click()
-    cy.get('.active', {timeout:100000})
-        .should('be.visible')
-})
-
-it('Verify close Bus button functionality', () => {
-    cy.get('.close-hp', {timeout: 50000}) 
-        .should('be.visible')
-        .click({force:true})
-})
-
-it('Verify choose Bus button functionality', () => {
-    cy.get('[data-id="3"]').click()
-    cy.get('.active > .hp-header', {timeout: 100000})
-        .should('be.visible')
-        .click()
-    cy.get('.active', {timeout:100000})   
-        .should('not.be.visible')
-    cy.get('.hotspot-item.selected')
-        .should('be.visible')
-});
-
-
-it('Verify submit answer button functionality', () => {
-    cy.get('.next-btn', {timeout:10000})
-        .should('be.visible')
-        .and('contain.text', 'Submit Answer')
-        .click()
-});
-
-
-it('Verify the 1st tutorial in group answer is not displayed', () => {
-    cy.get('#tutor-main > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-
-it('Verify the 2nd tutorial in group answer is not displayed', () => {
-    cy.get('#tutor-popup > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-it('Verify the 3rd tutorial in group answer is not displayed', () => {
-    cy.get('#tutor-submit > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-it('Verify selected individual answer displayed in group answer ', () => {
-    cy.get('*[class^="answerbox-item answer-item selected"]', {timeout: 100000})  
-        .find('div')  
-        .should('have.class', 'answer-count').find('span')
-        .should('have.class', 'number').and('contain.text', '1')
-    
-})
-
-
-it('Verify submit group answer fuctionality', () => {
-    cy.wait(3000)
-    cy.get('.input-group-answer', {timeout:10000})
-        .should('be.visible')
-        .click()
-})
-
-it('Verify the 1st tutorial in feedback screen is not displayed', () => {
-    cy.waitForResource('feedback.jpg', {timeout: 100000})
-    cy.wait(3000)
-    cy.get('#tutor-earned > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-
-it('Verify the 2nd tutorial in feedback screen is not displayed', () => {
-    cy.get('#tutor-progression > .tutor-inner', {timeout: 100000})
-        .should('not.be.visible');
-})
-
-it('Verify the feedback message is displayed in feedback screen', () => {
-    cy.get('.scl-row > :nth-child(1)', {timeout: 50000})
-        .should('be.visible')
-        .and('contain.text', 'Response from the UFC')
-})
-
-// it('Verify start vote correctly displayed', () => {
-//     cy.get('#stat-number')
-//         .should('be.visible')
-//         .and('contain.text', '+3')
+// it('Verify Day 4 Start Challenge button functionality', () => {
+//     cy.get('#start-challenge-in-briefing').click()
+//     cy.get('.brief-inner')
+//         .should('not.be.visible')
 // })
 
-it('Verify earned vote displayed in feedback screen', () =>{
-    cy.get('#votes-earned', {timeout:10000})
-        .should('be.visible')
-        .and('contain.text', '+0')
-})
+
+// it('Verify Bag 1 button funtionality', () => {
+//     cy.get('[data-id="1"]')
+//         .click()
+//     cy.get('.active', {timeout:100000})
+//         .should('be.visible')
+// })
+
+// it('Verify close Bag 1 button functionality', () => {
+//     cy.get('.close-hp', {timeout: 50000}) 
+//         .should('be.visible')
+//         .click({force:true})
+// })
+
+// it('Verify choose Bag 1 button functionality', () => {
+//     cy.get('[data-id="1"]').click()
+//     cy.get('.active > .hp-header', {timeout: 100000})
+//         .should('be.visible')
+//         .click()
+//     cy.get('.active', {timeout:100000})   
+//         .should('not.be.visible')
+//     cy.get('.hotspot-item.selected')
+//         .should('be.visible')
+// });
 
 
-it('Verify next button functionality in feedback screen', () => {
-    cy.waitForResource('feedback.jpg', {timeout: 100000})
-    cy.wait(3000)
-    cy.get('.next-btn', {timeout: 50000})
-        // .should('be.visible')
-        // .and('contain.text', 'Next')
-        .click()
-});
+// it('Verify Bag 2 button funtionality', () => {
+//     cy.get('[data-id="2"]')
+//         .click()
+//     cy.get('.active', {timeout:100000})
+//         .should('be.visible')
+// })
 
-it('Verify Result screen is displayed', () => {
-    cy.url().should('eq', config.homepage + '/result')
-    cy.get('h4').should('be.visible')
-    cy.get('.vp-inner > :nth-child(3)').should('be.visible')
-})
+// it('Verify close Bag 2 button functionality', () => {
+//     cy.get('.close-hp', {timeout: 50000}) 
+//         .should('be.visible')
+//         .click({force:true})
+// })
+
+// it('Verify choose Bag 2 button functionality', () => {
+//     cy.get('[data-id="2"]').click()
+//     cy.get('.active > .hp-header', {timeout: 100000})
+//         .should('be.visible')
+//         .click()
+//     cy.get('.active', {timeout:100000})   
+//         .should('not.be.visible')
+//     cy.get('.hotspot-item.selected')
+//         .should('be.visible')
+// });
 
 
-it('Verify next button functionality in result screen', () => {
-    cy.get('.next-btn', {timeout: 50000})
-        .should('be.visible')
-        .and('contain.text', 'Next')
-        .click()
-});
+// it('Verify submit answer button functionality', () => {
+//     cy.get('.next-btn', {timeout:10000})
+//         .should('be.visible')
+//         .click()
+// });
 
-it('Verify debriefing screen is displayed', () => {
-    cy.get('.gsc-inner', {timeout:100000})
-        .should('be.visible')
-        .and('contain.text', 'Before you start reflecting on the game, we want to take a moment to consider the concept of unconscious biases.')
-    cy.get('.gsc-inner', {timeout:100000})
-        .should('be.visible')
-        .and('contain.text', 'You have finished the game. Congratulations!')
+
+// it('Verify the 1st tutorial in group answer is not displayed', () => {
+//     cy.get('#tutor-main > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+
+// it('Verify the 2nd tutorial in group answer is not displayed', () => {
+//     cy.get('#tutor-popup > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+// it('Verify the 3rd tutorial in group answer is not displayed', () => {
+//     cy.get('#tutor-submit > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+// it('Verify selected individual answer displayed in group answer ', () => {
+//     cy.get('*[class^="answerbox-item answer-item selected"]', {timeout: 100000})  
+//         .find('div')  
+//         .should('have.class', 'answer-count').find('span')
+//         .should('have.class', 'number').and('contain.text', '1')
     
-})
+// })
 
-it('Verify deriefing message can be scroll', () => {
-    cy.get('.gsc-content').scrollTo('bottom')
-})
-
-it('Verify next button functionality in debriefing screen', () => {
-    cy.get('.next-btn', {timeout: 50000})
-        .should('be.visible')
-        .and('contain.text', 'Next')
-        .click()
-});
+// it('Verify submit group answer fuctionality', () => {
+//     cy.wait(3000)
+//     cy.get('.input-group-answer', {timeout:10000})
+//         .should('be.visible')
+//         .and('contain.text', 'Submit')
+//         .click()
+// })
 
 
-it('Verify individual reflection screen is displayed', () => {
-    cy.url().should('eq', config.homepage + '/individual-reflection')
-    cy.get('.challenge-question')
-        .should('be.visible')
-        .and('contain.text', 'Question')
-    cy.get('.chal-answers')
-        .should('be.visible')
-        .and('contain.text', 'Now is the time to reflect on what you have experienced and learned.')
-})
+// it('Verify the 1st tutorial in feedback screen is not displayed', () => {
+//     cy.waitForResource('feedback.jpg', {timeout: 100000})
+//     cy.wait(3000)
+//     cy.get('#tutor-earned > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+
+// it('Verify the 2nd tutorial in feedback screen is not displayed', () => {
+//     cy.get('#tutor-progression > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+// it('Verify the feedback message is displayed in feedback screen', () => {
+//     cy.get('.scl-row > :nth-child(1)', {timeout: 50000})
+//         .should('be.visible')
+//         .and('contain.text', 'Response from the UFC')
+// })
+
+// // it('Verify start vote correctly displayed', () => {
+// //     cy.get('#stat-number')
+// //         .should('be.visible')
+// //         .and('contain.text', '+3')
+// // })
+
+// it('Verify earned vote displayed in feedback screen', () =>{
+//     cy.get('#votes-earned', {timeout:10000})
+//         .should('be.visible')
+//         .and('contain.text', '+5')
+// })
+
+// it('Verify next button functionality in feedback screen', () => {
+//     cy.waitForResource('feedback.jpg', {timeout: 100000})
+//     cy.wait(3000)
+//     cy.get('.next-btn', {timeout: 50000})
+//         // .should('be.visible')
+//         // .and('contain.text', 'Next')
+//         .click()
+// });
+
+
+// it('Verify Day 5 - Introduction is displayed', () => {
+//     cy.get('.gsc-inner', {timeout: 100000})
+//         .should('be.visible')
+//         .and('contain.text', 'Project Future must be able to scale up')
+
+// });
+
+// it('Verify next button functionality in Day 5 - Introduction', () => {
+//     cy.get('.next-btn', {timeout:100000})
+//         .should('be.visible')
+//         .and('contain.text', 'Next')
+//         .click()
+// });
+
+
+// it('Verify Day 5 Beriefing message is displayed', () => {
+//     cy.get('.brief-inner', {timeout: 100000})
+//         .should('be.visible')
+//         .and('contain.text', 'Day Five')
+// })
+
+// it('Verify Day 5 Briefing message can be scroll', () => {
+//     cy.get('.brief-inner').scrollTo('bottom')
+// })
+
+// it('Verify Day 5 Start Challenge button is displayed', () => {
+//     cy.get('#start-challenge-in-briefing', {timeout: 50000})
+//         .should('be.visible')
+//         .and('contain.text', 'Start Challenge')
+// })
+
+// it('Verify Day 5 Start Challenge button functionality', () => {
+//     cy.get('#start-challenge-in-briefing').click()
+//     cy.get('.brief-inner')
+//         .should('not.be.visible')
+// })
+
+
+// it('Verify Email button funtionality', () => {
+//     cy.get('[data-id="1"]')
+//         .click()
+//     cy.get('.active', {timeout:100000})
+//         .should('be.visible')
+// })
+
+// it('Verify close Email button functionality', () => {
+//     cy.get('.close-hp', {timeout: 50000}) 
+//         .should('be.visible')
+//         .click({force:true})
+// })
+
+
+
+// it('Verify Research button funtionality', () => {
+//     cy.get('[data-id="2"]')
+//         .click()
+//     cy.get('.active', {timeout:100000})
+//         .should('be.visible')
+// })
+
+// it('Verify close Research button functionality', () => {
+//     cy.get('.close-hp', {timeout: 50000}) 
+//         .should('be.visible')
+//         .click({force:true})
+// })
+
+
+// it('Verify Survey button funtionality', () => {
+//     cy.get('[data-id="3"]')
+//         .click()
+//     cy.get('.active', {timeout:100000})
+//         .should('be.visible')
+// })
+
+// it('Verify close Survey button functionality', () => {
+//     cy.get('.close-hp', {timeout: 50000}) 
+//         .should('be.visible')
+//         .click({force:true})
+// })
+
+
+// it('Verify Social Media button funtionality', () => {
+//     cy.get('[data-id="4"]')
+//         .click()
+//     cy.get('.active', {timeout:100000})
+//         .should('be.visible')
+// })
+
+// it('Verify close Social Media button functionality', () => {
+//     cy.get('.close-hp', {timeout: 50000}) 
+//         .should('be.visible')
+//         .click({force:true})
+// })
+
+
+// it('Verify Newspaper button funtionality', () => {
+//     cy.get('[data-id="5"]')
+//         .click()
+//     cy.get('.active', {timeout:100000})
+//         .should('be.visible')
+// })
+
+// it('Verify close Newspaper button functionality', () => {
+//     cy.get('.close-hp', {timeout: 50000}) 
+//         .should('be.visible')
+//         .click({force:true})
+// })
+
+
+// it('Verify submit answer button functionality if submit without answer', () => {
+//     cy.get('.basic-challenge > .btn', {timeout:10000})
+//         .should('be.visible')
+//         .and('contain.text', 'Submit')
+//         .click()
+//     cy.get('#general-snackbar-content', {timeout: 100000})
+//         .should('be.visible')
+//         .and('contain.text','You have to select an answer')
+// });
+
+// it('Verify close button functionality in You have to select an answer popup', () => {
+//     cy.get('.close-snackbar').click()
+//     cy.get('#general-snackbar-wrapper')
+//         .should('not.be.visible')
+// })
+
+// it('Verify Day 5 question is displayed', () => {
+//     cy.get('.challenge-question > p', {timeout: 100000})
+//         .should('be.visible')
+//         .and('contain.text', 'What is the most urgent topic?')
+// })
+
+// it('Verify Day 5 asnwer is displayed', () => {
+//     cy.get('[data-index="0"] > label > span', {timeout: 100000})
+//         .should('be.visible')
+//         .and('contain.text', 'The inability to maintain a sustainable energy production.')
+//     cy.get('[data-index="1"] > label > span', {timeout: 100000})
+//         .should('be.visible')
+//         .and('contain.text', 'The lack of a strong healthcare system to support its growing number of inhabitants.')
+//     cy.get('[data-index="2"] > label > span', {timeout: 100000})
+//         .should('be.visible')
+//         .and('contain.text', 'The incapacity to maintain sustainable food production.')
+//     cy.get('[data-index="3"] > label > span', {timeout: 100000})
+//         .should('be.visible')
+//         .and('contain.text', 'The incapacity to solve the unequal wealth distribution.')
+
+// })
+
+
+// it('Verify select answer functioanlity', () => {
+//     cy.get('[data-index="2"] > label > span').click()
+//     cy.get('.selected > label > span').should('be.visible')
+// })
+
+
+// it('Verify submit answer button functionality', () => {
+//     cy.get('.basic-challenge > .btn', {timeout:10000})
+//         .should('be.visible')
+//         .and('contain.text', 'Submit')
+//         .click()
+// });
+
+
+// it('Verify the 1st tutorial in group answer is not displayed', () => {
+//     cy.get('#tutor-main > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+
+// it('Verify the 2nd tutorial in group answer is not displayed', () => {
+//     cy.get('#tutor-popup > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+// it('Verify the 3rd tutorial in group answer is not displayed', () => {
+//     cy.get('#tutor-submit > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+// it('Verify selected individual answer displayed in group answer ', () => {
+//     cy.get('*[class^="answerbox-item answer-item selected"]', {timeout: 100000})  
+//         .find('div')  
+//         .should('have.class', 'answer-count').find('span')
+//         .should('have.class', 'number').and('contain.text', '1')
+    
+// })
+
+
+// it('Verify submit group answer fuctionality', () => {
+//     cy.wait(3000)
+//     cy.get('.input-group-answer', {timeout:10000})
+//         .should('be.visible')
+//         .click()
+// })
+
+// it('Verify the 1st tutorial in feedback screen is not displayed', () => {
+//     cy.waitForResource('feedback.jpg', {timeout: 100000})
+//     cy.wait(3000)
+//     cy.get('#tutor-earned > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+
+// it('Verify the 2nd tutorial in feedback screen is not displayed', () => {
+//     cy.get('#tutor-progression > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+// it('Verify the feedback message is displayed in feedback screen', () => {
+//     cy.get('.scl-row > :nth-child(1)', {timeout: 50000})
+//         .should('be.visible')
+//         .and('contain.text', 'Response from the UFC')
+// })
+
+// // it('Verify start vote correctly displayed', () => {
+// //     cy.get('#stat-number')
+// //         .should('be.visible')
+// //         .and('contain.text', '+3')
+// // })
+
+// it('Verify earned vote displayed in feedback screen', () =>{
+//     cy.get('#votes-earned', {timeout:10000})
+//         .should('be.visible')
+//         .and('contain.text', '+10')
+// })
+
+
+// it('Verify next button functionality in feedback screen', () => {
+//     cy.waitForResource('feedback.jpg', {timeout: 100000})
+//     cy.wait(3000)
+//     cy.get('.next-btn', {timeout: 50000})
+//         // .should('be.visible')
+//         // .and('contain.text', 'Next')
+//         .click()
+// });
+
+
+// it('Verify Day 6 - Introduction is displayed', () => {
+//     cy.get('.gsc-inner', {timeout: 100000})
+//         .should('be.visible')
+//         .and('contain.text', 'The week is nearing its end.')
+
+// });
+
+// it('Verify next button functionality in Day 6 - Introduction', () => {
+//     cy.get('.next-btn', {timeout:100000})
+//         .should('be.visible')
+//         .and('contain.text', 'Next')
+//         .click()
+// });
+
+// it('Verify Day 6 Beriefing message is displayed', () => {
+//     cy.get('.brief-inner', {timeout: 100000})
+//         .should('be.visible')
+//         .and('contain.text', 'Rush hour')
+// })
+
+
+// it('Verify Day 6 Start Challenge button is displayed', () => {
+//     cy.get('#start-challenge-in-briefing', {timeout: 50000})
+//         .should('be.visible')
+//         .and('contain.text', 'Start Challenge')
+// })
+
+// it('Verify Day 6 Start Challenge button functionality', () => {
+//     cy.get('#start-challenge-in-briefing').click()
+//     cy.get('.brief-inner')
+//         .should('not.be.visible')
+// })
+
+
+// it('Verify Metro button funtionality', () => {
+//     cy.get('[data-id="1"]')
+//         .click()
+//     cy.get('.active', {timeout:100000})
+//         .should('be.visible')
+// })
+
+// it('Verify close Metro button functionality', () => {
+//     cy.get('.close-hp', {timeout: 50000}) 
+//         .should('be.visible')
+//         .click({force:true})
+// })
+
+// it('Verify choose Metro button functionality', () => {
+//     cy.get('[data-id="1"]').click()
+//     cy.get('.active > .hp-header', {timeout: 100000})
+//         .should('be.visible')
+//         .click()
+//     cy.get('.active', {timeout:100000})   
+//         .should('not.be.visible')
+//     cy.get('.hotspot-item.selected')
+//         .should('be.visible')
+// });
+
+
+// it('Verify Taxi button funtionality', () => {
+//     cy.get('[data-id="2"]')
+//         .click()
+//     cy.get('.active', {timeout:100000})
+//         .should('be.visible')
+// })
+
+// it('Verify close Taxi button functionality', () => {
+//     cy.get('.close-hp', {timeout: 50000}) 
+//         .should('be.visible')
+//         .click({force:true})
+// })
+
+// it('Verify choose Taxi button functionality', () => {
+//     cy.get('[data-id="2"]').click()
+//     cy.get('.active > .hp-header', {timeout: 100000})
+//         .should('be.visible')
+//         .click()
+//     cy.get('.active', {timeout:100000})   
+//         .should('not.be.visible')
+//     cy.get('.hotspot-item.selected')
+//         .should('be.visible')
+// });
+
+
+// it('Verify Bus button funtionality', () => {
+//     cy.get('[data-id="3"]')
+//         .click()
+//     cy.get('.active', {timeout:100000})
+//         .should('be.visible')
+// })
+
+// it('Verify close Bus button functionality', () => {
+//     cy.get('.close-hp', {timeout: 50000}) 
+//         .should('be.visible')
+//         .click({force:true})
+// })
+
+// it('Verify choose Bus button functionality', () => {
+//     cy.get('[data-id="3"]').click()
+//     cy.get('.active > .hp-header', {timeout: 100000})
+//         .should('be.visible')
+//         .click()
+//     cy.get('.active', {timeout:100000})   
+//         .should('not.be.visible')
+//     cy.get('.hotspot-item.selected')
+//         .should('be.visible')
+// });
+
+
+// it('Verify submit answer button functionality', () => {
+//     cy.get('.next-btn', {timeout:10000})
+//         .should('be.visible')
+//         .and('contain.text', 'Submit Answer')
+//         .click()
+// });
+
+
+// it('Verify the 1st tutorial in group answer is not displayed', () => {
+//     cy.get('#tutor-main > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+
+// it('Verify the 2nd tutorial in group answer is not displayed', () => {
+//     cy.get('#tutor-popup > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+// it('Verify the 3rd tutorial in group answer is not displayed', () => {
+//     cy.get('#tutor-submit > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+// it('Verify selected individual answer displayed in group answer ', () => {
+//     cy.get('*[class^="answerbox-item answer-item selected"]', {timeout: 100000})  
+//         .find('div')  
+//         .should('have.class', 'answer-count').find('span')
+//         .should('have.class', 'number').and('contain.text', '1')
+    
+// })
+
+
+// it('Verify submit group answer fuctionality', () => {
+//     cy.wait(3000)
+//     cy.get('.input-group-answer', {timeout:10000})
+//         .should('be.visible')
+//         .click()
+// })
+
+// it('Verify the 1st tutorial in feedback screen is not displayed', () => {
+//     cy.waitForResource('feedback.jpg', {timeout: 100000})
+//     cy.wait(3000)
+//     cy.get('#tutor-earned > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+
+// it('Verify the 2nd tutorial in feedback screen is not displayed', () => {
+//     cy.get('#tutor-progression > .tutor-inner', {timeout: 100000})
+//         .should('not.be.visible');
+// })
+
+// it('Verify the feedback message is displayed in feedback screen', () => {
+//     cy.get('.scl-row > :nth-child(1)', {timeout: 50000})
+//         .should('be.visible')
+//         .and('contain.text', 'Response from the UFC')
+// })
+
+// // it('Verify start vote correctly displayed', () => {
+// //     cy.get('#stat-number')
+// //         .should('be.visible')
+// //         .and('contain.text', '+3')
+// // })
+
+// it('Verify earned vote displayed in feedback screen', () =>{
+//     cy.get('#votes-earned', {timeout:10000})
+//         .should('be.visible')
+//         .and('contain.text', '+0')
+// })
+
+
+// it('Verify next button functionality in feedback screen', () => {
+//     cy.waitForResource('feedback.jpg', {timeout: 100000})
+//     cy.wait(3000)
+//     cy.get('.next-btn', {timeout: 50000})
+//         // .should('be.visible')
+//         // .and('contain.text', 'Next')
+//         .click()
+// });
+
+// it('Verify Result screen is displayed', () => {
+//     cy.url().should('eq', config.homepage + '/result')
+//     cy.get('h4').should('be.visible')
+//     cy.get('.vp-inner > :nth-child(3)').should('be.visible')
+// })
+
+
+// it('Verify next button functionality in result screen', () => {
+//     cy.get('.next-btn', {timeout: 50000})
+//         .should('be.visible')
+//         .and('contain.text', 'Next')
+//         .click()
+// });
+
+// it('Verify debriefing screen is displayed', () => {
+//     cy.get('.gsc-inner', {timeout:100000})
+//         .should('be.visible')
+//         .and('contain.text', 'Before you start reflecting on the game, we want to take a moment to consider the concept of unconscious biases.')
+//     cy.get('.gsc-inner', {timeout:100000})
+//         .should('be.visible')
+//         .and('contain.text', 'You have finished the game. Congratulations!')
+    
+// })
+
+// it('Verify deriefing message can be scroll', () => {
+//     cy.get('.gsc-content').scrollTo('bottom')
+// })
+
+// it('Verify next button functionality in debriefing screen', () => {
+//     cy.get('.next-btn', {timeout: 50000})
+//         .should('be.visible')
+//         .and('contain.text', 'Next')
+//         .click()
+// });
+
+
+// it('Verify individual reflection screen is displayed', () => {
+//     cy.url().should('eq', config.homepage + '/individual-reflection')
+//     cy.get('.challenge-question')
+//         .should('be.visible')
+//         .and('contain.text', 'Question')
+//     cy.get('.chal-answers')
+//         .should('be.visible')
+//         .and('contain.text', 'Now is the time to reflect on what you have experienced and learned.')
+// })
 
 
 // it('Verify bias screen is displayed', () => {
