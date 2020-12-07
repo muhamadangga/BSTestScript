@@ -10,12 +10,12 @@ const playerName = 'FrisseBlikken'
 
 describe('Blindsport Single Player Mode', () => {
   before(() => {
+    cy.clearCookies()
     cy.clearLocalStorageSnapshot();
   });
 
   beforeEach(() => {
     cy.restoreLocalStorage();
-    cy.clearCookie()
 
 	  // Preserve cookie in every test
 	  Cypress.Cookies.defaults({
