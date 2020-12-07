@@ -8,8 +8,6 @@ workflows:
       - cypress/install
       # now run tests
       - cypress/run:
-          executor: cypress/browsers-chrome69
-          browser: chrome
           # give this job a custom name for clarity
           name: 'end-to-end tests'
           requires:
