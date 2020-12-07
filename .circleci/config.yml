@@ -1,6 +1,10 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
+executors:
+  with-chrome
+    docker:
+      - image: "cypress/browsers:node12.14.1-chrome86
 workflows:
   build:
     jobs:
