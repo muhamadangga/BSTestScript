@@ -368,7 +368,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 })
 
 it('Verify submit group answer fuctionality', () => {
-    cy.wait(2000)
+    cy.wait(3000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .click()
@@ -539,7 +539,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 
 
 it('Verify submit group answer fuctionality', () => {
-    cy.wait(2000)
+    cy.wait(3000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .click()
@@ -749,7 +749,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 })
 
 it('Verify submit group answer fuctionality', () => {
-    cy.wait(2000)
+    cy.wait(3000)
     cy.get('.input-group-answer', {timeout:100000})
         .should('be.visible')
         .click()
@@ -903,7 +903,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 })
 
 it('Verify submit group answer fuctionality', () => {
-    cy.wait(2000)
+    cy.wait(3000)
     cy.get('.input-group-answer', {timeout:100000})
         .should('be.visible')
         .click()
@@ -1054,7 +1054,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 })
 
 it('Verify submit group answer fuctionality', () => {
-    cy.wait(2000)
+    cy.wait(3000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .click()
@@ -1325,7 +1325,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 })
 
 it('Verify submit group answer fuctionality', () => {
-    cy.wait(2000)
+    cy.wait(3000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .click()
@@ -1479,7 +1479,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 })
 
 it('Verify submit group answer fuctionality', () => {
-    cy.wait(2000)
+    cy.wait(3000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .and('contain.text', 'Submit')
@@ -1716,7 +1716,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 
 
 it('Verify submit group answer fuctionality', () => {
-    cy.wait(2000)
+    cy.wait(3000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .click()
@@ -1907,7 +1907,7 @@ it('Verify selected individual answer displayed in group answer ', () => {
 
 
 it('Verify submit group answer fuctionality', () => {
-    cy.wait(2000)
+    cy.wait(3000)
     cy.get('.input-group-answer', {timeout:10000})
         .should('be.visible')
         .click()
