@@ -3,7 +3,7 @@ orbs:
   cypress: cypress-io/cypress@1
 workflows:
   build:
-  jobs:
+     jobs:
       # install dependencies first (on 1 machine)
       - cypress/install
       # now run tests
