@@ -575,7 +575,7 @@ it('Verify earned vote displayed in feedback screen', () =>{
 })
 
 it('Verify next button functionality in feedback screen challenge 1', () => {
-    cy.waitForResource('feedback.jpg', {timeout: 100000})
+    //cy.waitForResource('feedback.jpg', {timeout: 100000})
     cy.wait(3000)
     cy.get('.next-btn', {timeout: 100000})
         // .should('be.visible')
