@@ -44,15 +44,4 @@ module.exports = (on, config) => {
   }
 
   });
-
-
-
 };
-
-// const csvdata = require('csvdata') 
-//   on('taskC', {
-//       log (message) {
-//         csvdata.write('./logs.csv', message, {append: true, header: 'stats,numusers'})
-//         return null
-//     }
-//   })

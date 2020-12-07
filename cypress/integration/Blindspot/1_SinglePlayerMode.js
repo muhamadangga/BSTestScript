@@ -103,7 +103,7 @@ it('Visit the homepage', () => {
     cy.visit(config.homepage)
     cy.get('#signupTitle')
         .should('be.visible')
-        .and('contain.text', 'Welcome to Blindspoti')
+        .and('contain.text', 'Welcome to Blindspot')
 });
 
 it('Request Login Link', () => {
